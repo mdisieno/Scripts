@@ -1,0 +1,27 @@
+OLD----
+rclone mount -vvv --umask 002 --allow-other --allow-non-empty --fast-list --dir-cache-time 96h --drive-acknowledge-abuse=true --vfs-cache-mode full --drive-chunk-size 32M --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit off GTorrentsCrypt: /home15/s0n1cm0nk3y/Media/GDrive/Torrents/
+
+rclone mount -vvv --umask 002 --allow-other --allow-non-empty --fast-list --dir-cache-time 96h --drive-acknowledge-abuse=true --vfs-cache-mode full --drive-chunk-size 32M --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit off GMoviesCrypt: /home15/s0n1cm0nk3y/Media/GDrive/Movies/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cache ---
+rclone mount -vv --allow-other --allow-non-empty GMediaCrypt: /link/to/file &
+
+
+rclone mount -vvv --umask 002 --allow-other --dir-cache-time 96h --drive-chunk-size 32M --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit off GTorrentsCrypt: /srv/dev-disk-by-label-Cloud/GDrive/Torrents/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VFS ---
+rclone mount -vv --allow-other --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit off GMediaDirectCrypt: /srv/dev-disk-by-label-Cloud/Temp/ &
+
+rclone mount -vv --allow-other --buffer-size 1G --dir-cache-time 96h  --drive-chunk-size 32M --vfs-read-chunk-size 128M --timeout 1h --umask 002 GMediaDirectCrypt: /srv/dev-disk-by-label-Cloud/GDrive/Media/
+
+rclone mount -vv --allow-other --log-level ERROR --syslog --umask 002  --fuse-flag sync_read --tpslimit 10 --tpslimit-burst 10 --dir-cache-time=160h --buffer-size=64M --attr-timeout=1s --vfs-read-chunk-size=128M --vfs-cache-max-age=5m --vfs-cache-mode=writes --vfs-read-chunk-size-limit=off GMediaDirectCrypt: /srv/dev-disk-by-label-Cloud/GDrive/Media/
+
+
+
+Current:
+rclone mount -vv --allow-other --umask 002  --fuse-flag sync_read --tpslimit 10 --tpslimit-burst 10 --dir-cache-time=160h --buffer-size=64M --attr-timeout=1s --vfs-read-chunk-size=128M --vfs-cache-max-age=5m --vfs-cache-mode=writes --vfs-read-chunk-size-limit=off GMediaDirectCrypt: /srv/dev-disk-by-label-Cloud/GDrive/Media/
+
+rclone mount -vv --allow-other --umask 002  --fuse-flag sync_read --tpslimit 10 --tpslimit-burst 10 --dir-cache-time=160h --buffer-size=64M --attr-timeout=1s --vfs-read-chunk-size=128M --vfs-cache-max-age=5m --vfs-cache-mode=writes --vfs-read-chunk-size-limit=off GMediaDirectCrypt: /home15/s0n1cm0nk3y/GDrive/Media/
+
