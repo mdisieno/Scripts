@@ -1,0 +1,13 @@
+[Unit]
+Description = {where{ MergerFS mount
+PartOf=mergerfsPool.service
+After=baseMFSPool.service
+
+[Mount]
+What = {what is being pooled. a good tip for multiple drives is /dev/sd*}
+Where = {where are you going to pool it?}
+Type = fuse.mergerfs
+Options = defaults,sync_read,allow_other,category.action=all,category.create=ff
+
+[Install]
+WantedBy=baseMFSPool.service
