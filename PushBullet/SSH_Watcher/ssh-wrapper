@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+SHELL=$(getent passwd $USER | cut -d: -f7)
+
+IP=$(echo $SSH_CONNECTION | cut -d " " -f 1)
+
+HOSTNAME=$(dig -x $IP +short)
+
+#if [ -z "${HOSTNAME}" ]; then
+
+#        HOSTNAME=$IP
+
+#fi
+
+LOCALHOST=$(hostname)
+
+/usr/local/sbin/pushmessage "SSH:Cloud" "Someone has logged into {Whatever you call your machine}"
+
+
+${SSH_ORIGINAL_COMMAND-$SHELL}
