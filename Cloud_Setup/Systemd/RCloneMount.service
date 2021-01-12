@@ -1,0 +1,33 @@
+[Unit]
+Description=RClone Service
+PartOf=gmedia.service
+
+[Service]
+Type=notify
+
+ExecStart=/usr/bin/rclone mount {Mount_Name}: {Mount Location} \
+--allow-other \
+--dir-cache-time 160h \
+--fuse-flag sync_read \
+--tpslimit 10 \
+--tpslimit-burst 10 \
+--buffer-size=1G \
+--attr-timeout=1s \
+--vfs-read-chunk-size=256M \
+--vfs-cache-max-age=5m \
+--vfs-cache-mode=writes \
+--vfs-read-chunk-size-limit=off \
+--log-level DEBUG \
+--log-file /var/log/{Log_File} \
+--timeout 1h \
+--umask 002 \
+--rc 
+
+ExecStop=/bin/fusermount -uz {mount location}
+RestartSec=10
+Restart=on-failure
+User={user}
+Group={group}
+
+[Install]
+WantedBy=gmedia.service
