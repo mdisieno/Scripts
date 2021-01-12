@@ -1,20 +1,18 @@
 #!/bin/sh
 
-
-SHELL=$(getent passwd $USER | cut -d: -f7)
-
-IP=$(echo $SSH_CONNECTION | cut -d " " -f 1)
-
-HOSTNAME=$(dig -x $IP +short)
-
-#if [ -z "${HOSTNAME}" ]; then
-
-#        HOSTNAME=$IP
-
+#if [ "$#" != 2 ]; then
+#    echo "Usage: $0 SSH Login" >&2
+#    exit 1
 #fi
 
-LOCALHOST=$(hostname)
+arg1=$1
+arg2=$2
 
-/usr/local/sbin/pushmessage "SSH:Cloud" "Someone has logged into Cloud"
+APIKEY="{API key on PB}"
+IDEN="{identity on PB}"
 
-
+curl https://api.pushbullet.com/api/pushes -u ${APIKEY}: \
+    --output /dev/null --silent --max-time 5 \
+    -X POST -d channel_tag="docloudfeed" \
+    -d type=note -d title="$1" \
+    -d body="$2"
