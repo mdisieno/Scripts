@@ -5,7 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "type": "java",
+            "name": "Launch HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "Code_32870a5d"
+        },
+        {
+            "name": "Python: Build/Debug Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
@@ -17,9 +24,8 @@
             "request": "launch",
             "mainClass": ""
         },
-
         {
-            "name": "g++ - Build and debug active file",
+            "name": "G++: Build/Debug active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -38,7 +44,17 @@
             ],
             "preLaunchTask": "C/C++: g++ build active file",
             "miDebuggerPath": "/usr/bin/gdb"
-        }
+        },
+        {
+            "type": "java",
+            "name": "Java: Build/Debug active file",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "",
+            "args": "bla"
+        },
         {
             "type": "node",
             "request": "launch",
