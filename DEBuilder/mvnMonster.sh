@@ -1,0 +1,22 @@
+cd UtilitiesPP
+mvn clean
+mvn compile
+mvn install
+cd ../DIS
+mvn clean
+mvn compile
+mvn install
+cd ../CMF
+./install_jcmfpl.sh
+mvn clean
+mvn compile
+mvn install
+cd ../JavaMap
+mvn clean
+mvn compile
+mvn install
+cd ../CloudV2
+mvn clean
+mvn compile
+mvn install
+cd ..
