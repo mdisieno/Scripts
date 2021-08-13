@@ -12,20 +12,19 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Location for Dev Environment folder. (Relative to Home)
 #-No need for tild (Use /Folder instead of ~/Folder)
+
+#WIP - Smarter folder recognition incoming.
 ---------------------------------------------------
 #FOLDER = /Work/Tester
 
-#WIP - Smarter folder recognition incoming.
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #List of repos to parse through. (preferrably SSH)
 #put the repos between the lines and preceed with #REPO = 
 ---------------------------------------------------
-#REPO = git@ssh.dev.azure.com:v3/gc2it-eng/CloudV2/CloudV2
-#REPO = git@ssh.dev.azure.com:v3/gc2it-eng/CMF/CMF
-#REPO = git@ssh.dev.azure.com:v3/gc2it-eng/DIS/DIS
-#REPO = git@ssh.dev.azure.com:v3/gc2it-eng/JavaMap/JavaMap
-#REPO = git@ssh.dev.azure.com:v3/gc2it-eng/UtilitiesPP/UtilitiesPP
+#REPO = SSH REPO URL
+
 ---------------------------------------------------
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
