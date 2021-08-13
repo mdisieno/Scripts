@@ -1,5 +1,5 @@
 [Unit]
-Description = {where{ MergerFS mount
+Description = {where} MergerFS mount
 PartOf=mergerfsPool.service
 After=baseMFSPool.service
 
